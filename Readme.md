@@ -34,9 +34,93 @@ productivity-tracker/
 ├── package.json
 └── webpack.config.js
 
+```
+
+### 🧪 Technologies & Tools Used
+
+| Category                       | Tools / Technologies                                                      |
+| ------------------------------ | ------------------------------------------------------------------------- |
+| **Frontend**                   | [React](https://reactjs.org) (JSX, Components, Hooks)                     |
+| **Build Tools**                | [Webpack](https://webpack.js.org), Babel                                  |
+| **Styling**                    | Custom CSS (Optional: Tailwind CSS)                                       |
+| **Chrome Extension APIs**      | `chrome.storage`, `chrome.tabs`, `chrome.windows`                         |
+| **JavaScript Features**        | ES6+, Promises, `useEffect`, `useState`                                   |
+| **Data Persistence**           | `chrome.storage.sync` (for goals), `chrome.storage.local` (for site time) |
+| **Background Logic**           | `background.js` with Chrome Event Listeners                               |
+| **Icons/Assets**               | Custom PNG icon (or [React Icon](https://react-icons.github.io))          |
+| **Time Tracking**              | Time per hostname using tab focus + timestamps                            |
+| **Productivity Visualization** | Progress bars for time spent per site                                     |
+| **Automation Feature**         | Daily reset of tracked sites at midnight                                  |
+
+## 🛠️ Installation & Setup
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- Google Chrome (to load the extension)
+
+---
+
+### Initial Setup
+
+```bash
+npm init -y
 ````
 
-## 🛠️ Setup Instructions
+This creates your `package.json`.
+
+---
+
+### Install Core Dependencies
+
+```bash
+npm install react react-dom
+```
+
+---
+
+### Install Dev Dependencies
+
+```bash
+npm install -D \
+webpack webpack-cli \
+babel-loader @babel/core @babel/preset-env @babel/preset-react \
+html-webpack-plugin copy-webpack-plugin \
+style-loader css-loader
+```
+
+> These are required to bundle React, support JSX, compile ES6+, and copy necessary files into the Chrome extension build.
+
+
+### 🔧 Configure Webpack & Babel
+
+Make sure your project includes:
+
+* `webpack.config.js`
+* `.babelrc`
+
+**.babelrc**
+
+```json
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+```
+
+
+### ⚙️ Build the Extension
+
+```bash
+npm run build
+```
+
+
+### 🧩 Load into Chrome
+
+1. Go to `chrome://extensions`
+2. Enable **Developer Mode**
+3. Click **"Load unpacked"**
+4. Select the `dist/` folder
 
 ### 1. Clone & Install
 
@@ -70,7 +154,6 @@ This creates a `bundle.js` and copies necessary files to the build output.
 
   * The extension stores the current date
   * If a new day is detected, it resets the tracked time automatically
-
 
 ## Permissions Required
 
