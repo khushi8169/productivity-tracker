@@ -172,7 +172,4 @@ Each day at midnight:
 * All websites are refreshed
 * Goals are kept unless deleted manually
 
-## 📃 License
-
-MIT License © 2025 \ khushii singhh
 
