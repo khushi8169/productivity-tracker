@@ -107,14 +107,6 @@ Make sure your project includes:
 }
 ```
 
-
-### ⚙️ Build the Extension
-
-```bash
-npm run build
-```
-
-
 ### 1. Clone & Install
 
 ```bash
